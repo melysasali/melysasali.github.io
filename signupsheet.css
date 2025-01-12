@@ -13,16 +13,16 @@
 }
 
 #signup-section {
-    display: none; /* Initially hidden */
+    display: none; 
     text-align: center;
 }
 
 .form.active {
-    display: block; /* Show when toggled active */
+    display: block;
 }
 
 .form {
-    display: none; /* Hide inactive forms */
+    display: none; 
     margin: 0 auto;
     padding: 20px;
     max-width: 400px;
@@ -45,12 +45,12 @@
 
 
 form {
-    display: none; /* Hide forms by default */
+    display: none;
     flex-direction: column;
 }
 
     form.active {
-        display: flex; /* Show the active form */
+        display: flex; 
     }
 
     form h2 {
