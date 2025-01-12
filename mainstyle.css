@@ -1,0 +1,405 @@
+﻿/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sclipici */
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffccff, rgba(255, 182, 193, 0.7));
+    border-radius: 50%;
+    pointer-events: none; /* Nu interferează cu mouse-ul */
+    animation: sparkle-animation 1s ease-out;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+/* Animație pentru dispariția sclipiciului */
+@keyframes sparkle-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: blue;
+    }
+
+    50% {
+        color: green;
+    }
+
+    75% {
+        color: purple;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+header h1 {
+    animation: colorChange 5s infinite;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec; /* Light pink background */
+    color: #4a148c; /* Darker, more accessible text color */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+header h1 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 3rem;
+    color: #880e4f; /* Deep pink */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content Styling */
+main {
+    background-color: #f8bbd0; /* Slightly darker pink for contrast */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px; /* Keeps content centered and readable */
+}
+
+/* Heading Styles */
+h2, h3 {
+    color: #ad1457; /* Strong pink for headings */
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+    .dropdown a {
+        text-decoration: none;
+        color: #fff;
+        background-color: #f06292; /* Vibrant pink for buttons */
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px; /* Matches overall design style */
+}
+
+    .dropdown-content a {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #4a148c; /* Matches text color theme */
+        display: block;
+        text-align: left;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+nav a:hover {
+    background-color: #d81b60; /* Slightly darker pink for hover */
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a:active {
+    background-color: #c2185b; /* Deep pink for active state */
+}
+
+/* Section Styling */
+section {
+    padding: 40px;
+    margin: 20px 0;
+    border: 1px solid #e91e63; /* Highlight border */
+    border-radius: 10px;
+    background-color: #fce4ec; /* Matches body background for subtlety */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    section h2 {
+        margin-bottom: 15px;
+    }
+
+    section p {
+        font-size: 1.1rem;
+        color: #880e4f; /* Darker text color for readability */
+    }
+
+/* Animation for images */
+@keyframes imageHoverEffect {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(2deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+    img:hover {
+        animation: imageHoverEffect 0.5s ease-in-out; /* Apply the animation */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance the hover shadow */
+        transform: scale(1.1); /* Slight zoom for hover */
+    }
+
+
+/* Styling for game codes section */
+.code {
+    margin-bottom: 20px;
+}
+
+    .code h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+.code-images {
+    display: flex; /* Align images horizontally */
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center-align images in container */
+}
+
+    .code-images img {
+        width: 80px; /* Adjust image size */
+        height: auto;
+        border: 1px solid #ccc; /* Optional: border for aesthetic */
+        border-radius: 5px; /* Rounded corners */
+        transition: transform 0.3s ease; /* Smooth hover effect */
+    }
+
+        .code-images img:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
+/* Free Items Section - List of Images */
+#free-items ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
+    gap: 10px; /* Add space between images */
+    justify-content: center; /* Center-align images in the container */
+}
+
+#free-items li {
+    margin: 0;
+}
+
+#free-items img {
+    width: 100px; /* Set width for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid pink; /* Add pink border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+}
+
+#robux-items ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
+    gap: 10px; /* Add space between images */
+    justify-content: center; /* Center-align images in the container */
+}
+
+#robux-items li {
+    margin: 0;
+}
+
+#robux-items img {
+    width: 100px; /* Set width for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid pink; /* Add pink border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+}
+
+#vip-items ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
+    gap: 10px; /* Add space between images */
+    justify-content: center; /* Center-align images in the container */
+}
+
+#vip-items li {
+    margin: 0;
+}
+
+#vip-items img {
+    width: 100px; /* Set width for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid pink; /* Add pink border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+}
+
+#makeup ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
+    gap: 10px; /* Add space between images */
+    justify-content: center; /* Center-align images in the container */
+}
+
+#makeup li {
+    margin: 0;
+}
+
+#makeup img {
+    width: 100px; /* Set width for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid pink; /* Add pink border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+}
+
+#hair ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
+    gap: 10px; /* Add space between images */
+    justify-content: center; /* Center-align images in the container */
+}
+
+#hair li {
+    margin: 0;
+}
+
+#hair img {
+    width: 100px; /* Set width for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid pink; /* Add pink border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+}
+
+#patterns ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
+    gap: 10px; /* Add space between images */
+    justify-content: center; /* Center-align images in the container */
+}
+
+#patterns li {
+    margin: 0;
+}
+
+#patterns img {
+    width: 100px; /* Set width for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    border: 3px solid pink; /* Add pink border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        nav a {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+    section {
+        padding: 20px;
+    }
+
+    #free-items img {
+        width: 80px; /* Smaller images on mobile for better fit */
+    }
+}
+}

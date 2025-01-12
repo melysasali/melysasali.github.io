@@ -1,0 +1,140 @@
+﻿document.addEventListener('mousemove', (e) => {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = `${e.pageX}px`;
+    sparkle.style.top = `${e.pageY}px`;
+
+    document.body.appendChild(sparkle);
+
+    // Remove the particle after 1 second
+    setTimeout(() => {
+        sparkle.remove();
+    }, 1000);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Add some styles for buttons
+    const style = document.createElement("style");
+    style.textContent = `
+    .styled-button {
+        background-color: #f8bbd0; /* Pink background */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .styled-button:hover {
+        background-color: #d81b60; /* Darker pink on hover */
+        transform: scale(1.05);
+    }
+
+    .styled-button:active {
+        transform: scale(1);
+        background-color: #c2185b; /* Even darker pink on active click */
+    }
+`;
+    document.head.appendChild(style);
+
+        // Add Random Item Button
+        const randomItemButton = document.createElement("button");
+        randomItemButton.textContent = "Add Random Item";
+        randomItemButton.className = "styled-button"; // Apply styled-button class
+        document.body.appendChild(randomItemButton);
+
+        randomItemButton.addEventListener("click", () => {
+            const categories = Array.from(document.querySelectorAll(".category"));
+            if (categories.length === 0) {
+                alert("No categories found!");
+                return;
+            }
+
+            const categoryNames = categories.map((cat) => cat.id).join(", ");
+            const selectedCategory = prompt(`Enter the category to add an item (${categoryNames}):`);
+            const categorySection = document.getElementById(selectedCategory);
+
+            if (!categorySection) {
+                alert("Invalid category selected.");
+                return;
+            }
+
+           const photoUrl = prompt("Enter the photo URL for the new item:");
+            if (!photoUrl) {
+                alert("Please enter a valid photo URL.");
+                return;
+            }
+
+           let itemList = categorySection.querySelector("ul");
+            if (!itemList) {
+                itemList = document.createElement("ul");
+                categorySection.appendChild(itemList);
+            }
+
+            const newItem = document.createElement("li");
+            const newImage = document.createElement("img");
+            newImage.src = photoUrl;
+            newImage.alt = "User-added item";
+
+            newItem.appendChild(newImage);
+            itemList.appendChild(newItem);
+
+            alert("Item added successfully!");
+        });
+
+        // Change Background Color Button
+        const changeBgButton = document.createElement("button");
+        changeBgButton.textContent = "Change Background Color";
+        changeBgButton.className = "styled-button"; // Apply styled-button class
+        document.body.appendChild(changeBgButton);
+
+        changeBgButton.addEventListener("click", () => {
+            const colors = ["#f8bbd0", "#ffccbc", "#dcedc8", "#b3e5fc", "#ffcdd2"];
+            document.body.style.backgroundColor =
+                 colors[Math.floor(Math.random() * colors.length)];
+        });
+
+        // Delete Photos Button
+        const deletePhotosButton = document.createElement("button");
+        deletePhotosButton.textContent = "Delete Photos";
+        deletePhotosButton.className = "styled-button"; // Apply styled-button class
+        deletePhotosButton.style.marginTop = "10px";
+        document.body.appendChild(deletePhotosButton);
+
+        deletePhotosButton.addEventListener("click", () => {
+            const allImages = document.querySelectorAll(".category img");
+
+           if (allImages.length === 0) {
+                alert("No photos found to delete!");
+                return;
+            }
+
+            allImages.forEach((img) => {
+                img.style.border = "2px solid red";
+                img.title = "Click to delete this photo";
+
+                img.addEventListener("click", function handleDelete() {
+                    const confirmDelete = confirm("Are you sure you want to delete this photo?");
+                    if (confirmDelete) {
+                        img.remove();
+                        alert("Photo deleted successfully!");
+                }
+
+                    img.removeEventListener("click", handleDelete);
+                    img.style.border = "none";
+                    img.title = "";
+                });
+            });
+
+            alert("Click on a photo to delete it. Red border indicates deletable photos.");
+
+
+        });
+
+        
+    
+});
