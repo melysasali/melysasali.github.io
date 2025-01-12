@@ -6,7 +6,6 @@
 
     document.body.appendChild(sparkle);
 
-    // Remove the particle after 1 second
     setTimeout(() => {
         sparkle.remove();
     }, 1000);
@@ -14,7 +13,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Add some styles for buttons
     const style = document.createElement("style");
     style.textContent = `
     .styled-button {
@@ -41,10 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
 `;
     document.head.appendChild(style);
 
-        // Add Random Item Button
         const randomItemButton = document.createElement("button");
         randomItemButton.textContent = "Add Random Item";
-        randomItemButton.className = "styled-button"; // Apply styled-button class
+        randomItemButton.className = "styled-button"; 
         document.body.appendChild(randomItemButton);
 
         randomItemButton.addEventListener("click", () => {
@@ -86,10 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Item added successfully!");
         });
 
-        // Change Background Color Button
         const changeBgButton = document.createElement("button");
         changeBgButton.textContent = "Change Background Color";
-        changeBgButton.className = "styled-button"; // Apply styled-button class
+        changeBgButton.className = "styled-button"; 
         document.body.appendChild(changeBgButton);
 
         changeBgButton.addEventListener("click", () => {
@@ -98,10 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
                  colors[Math.floor(Math.random() * colors.length)];
         });
 
-        // Delete Photos Button
         const deletePhotosButton = document.createElement("button");
         deletePhotosButton.textContent = "Delete Photos";
-        deletePhotosButton.className = "styled-button"; // Apply styled-button class
+        deletePhotosButton.className = "styled-button"; 
         deletePhotosButton.style.marginTop = "10px";
         document.body.appendChild(deletePhotosButton);
 
