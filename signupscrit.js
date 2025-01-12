@@ -19,7 +19,6 @@
      document.getElementById('login-form').classList.add('active');
  });
 
- // Check if a user is already logged in
  const loggedInUser = sessionStorage.getItem("loggedInUser");
  if (loggedInUser) {
      showMainContent(loggedInUser);
@@ -50,8 +49,7 @@
                 if (user) {
                     sessionStorage.setItem("loggedInUser", username);
 
-                    // Redirect to another website on successful login
-                    window.location.href = "https://github.com/melysasali/melysasali.github.io/blob/main/dtimp.html"; // Replace with your desired URL
+                    window.location.href = "https://github.com/melysasali/melysasali.github.io/blob/main/dtimp.html"; 
                 } else {
                     loginStatus.textContent = "Invalid username or password.";
                     loginStatus.style.color = "red";
@@ -65,7 +63,6 @@
     });
 
 
- // Logout button click
  logoutBtn.addEventListener("click", () => {
      sessionStorage.removeItem("loggedInUser");
      showLoginForm();
@@ -99,8 +96,7 @@
                 if (userExists) {
                     signupStatus.textContent = "Username already exists!";
                     signupStatus.style.color = "red";
-                } else {
-                    // Save new user temporarily
+                } else 
                     savedUsers.push({ username, password });
                     localStorage.setItem("users", JSON.stringify(savedUsers));
 
@@ -108,10 +104,9 @@
                     signupStatus.style.color = "green";
                     signupForm.reset();
 
-                    // Redirect to another website on successful signup
                     setTimeout(() => {
-                        window.location.href = "https://github.com/melysasali/melysasali.github.io/blob/main/dtimp.html"; // Replace with your desired URL
-                    }, 1000); // Delay for user to see the success message
+                        window.location.href = "https://github.com/melysasali/melysasali.github.io/blob/main/dtimp.html"; 
+                    }, 1000); 
                 }
             })
             .catch((error) => {
@@ -121,7 +116,6 @@
     });
 
 
-  // Function to show the login form
  function showLoginForm() {
      loginSection.style.display = "block";
      mainContent.style.display = "none";
