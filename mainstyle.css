@@ -1,23 +1,21 @@
-﻿/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Sclipici */
 .sparkle {
     position: absolute;
     width: 10px;
     height: 10px;
     background: radial-gradient(circle, #ffccff, rgba(255, 182, 193, 0.7));
     border-radius: 50%;
-    pointer-events: none; /* Nu interferează cu mouse-ul */
+    pointer-events: none; 
     animation: sparkle-animation 1s ease-out;
     box-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 20px rgba(255, 105, 180, 0.6);
 }
 
-/* Animație pentru dispariția sclipiciului */
 @keyframes sparkle-animation {
     0% {
         transform: scale(1);
@@ -59,35 +57,33 @@ header h1 {
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fce4ec; /* Light pink background */
-    color: #4a148c; /* Darker, more accessible text color */
+    background-color: #fce4ec; 
+    color: #4a148c; 
     line-height: 1.6;
     padding: 20px;
 }
 
-/* Header Styling */
+
 header h1 {
     font-family: 'Comic Sans MS', cursive, sans-serif;
     font-size: 3rem;
-    color: #880e4f; /* Deep pink */
+    color: #880e4f; 
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Main Content Styling */
 main {
-    background-color: #f8bbd0; /* Slightly darker pink for contrast */
+    background-color: #f8bbd0; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
-    max-width: 1200px; /* Keeps content centered and readable */
+    max-width: 1200px; 
 }
 
-/* Heading Styles */
 h2, h3 {
-    color: #ad1457; /* Strong pink for headings */
+    color: #ad1457; 
     text-align: center;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     margin-bottom: 20px;
@@ -103,7 +99,6 @@ h3 {
     font-style: italic;
 }
 
-/* Navigation Menu */
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -119,7 +114,7 @@ nav {
     .dropdown a {
         text-decoration: none;
         color: #fff;
-        background-color: #f06292; /* Vibrant pink for buttons */
+        background-color: #f06292; 
         padding: 10px 20px;
         margin: 5px;
         font-size: 1.2rem;
@@ -129,19 +124,19 @@ nav {
     }
 
 .dropdown-content {
-    display: none; /* Hidden by default */
+    display: none; 
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border-radius: 5px; /* Matches overall design style */
+    border-radius: 5px; 
 }
 
     .dropdown-content a {
         padding: 10px 15px;
         text-decoration: none;
-        color: #4a148c; /* Matches text color theme */
+        color: #4a148c; 
         display: block;
         text-align: left;
     }
@@ -151,26 +146,25 @@ nav {
         }
 
 .dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown on hover */
+    display: block; 
 }
 
 nav a:hover {
-    background-color: #d81b60; /* Slightly darker pink for hover */
+    background-color: #d81b60; 
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav a:active {
-    background-color: #c2185b; /* Deep pink for active state */
+    background-color: #c2185b; 
 }
 
-/* Section Styling */
 section {
     padding: 40px;
     margin: 20px 0;
-    border: 1px solid #e91e63; /* Highlight border */
+    border: 1px solid #e91e63; 
     border-radius: 10px;
-    background-color: #fce4ec; /* Matches body background for subtlety */
+    background-color: #fce4ec;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -181,10 +175,9 @@ section {
 
     section p {
         font-size: 1.1rem;
-        color: #880e4f; /* Darker text color for readability */
+        color: #880e4f; 
     }
 
-/* Animation for images */
 @keyframes imageHoverEffect {
     0% {
         transform: scale(1) rotate(0deg);
@@ -200,17 +193,16 @@ section {
 }
 
 img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
     img:hover {
-        animation: imageHoverEffect 0.5s ease-in-out; /* Apply the animation */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance the hover shadow */
-        transform: scale(1.1); /* Slight zoom for hover */
+        animation: imageHoverEffect 0.5s ease-in-out;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+        transform: scale(1.1); 
     }
 
 
-/* Styling for game codes section */
 .code {
     margin-bottom: 20px;
 }
@@ -221,31 +213,30 @@ img {
     }
 
 .code-images {
-    display: flex; /* Align images horizontally */
-    gap: 10px; /* Space between images */
-    justify-content: center; /* Center-align images in container */
+    display: flex; 
+    gap: 10px; 
+    justify-content: center; 
 }
 
     .code-images img {
-        width: 80px; /* Adjust image size */
+        width: 80px; 
         height: auto;
-        border: 1px solid #ccc; /* Optional: border for aesthetic */
-        border-radius: 5px; /* Rounded corners */
-        transition: transform 0.3s ease; /* Smooth hover effect */
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+        transition: transform 0.3s ease; 
     }
 
         .code-images img:hover {
-            transform: scale(1.1); /* Slightly enlarge on hover */
+            transform: scale(1.1); 
         }
 
-/* Free Items Section - List of Images */
 #free-items ul {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     padding: 0;
-    display: flex; /* Align items horizontally */
-    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
-    gap: 10px; /* Add space between images */
-    justify-content: center; /* Center-align images in the container */
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
 }
 
 #free-items li {
@@ -253,20 +244,20 @@ img {
 }
 
 #free-items img {
-    width: 100px; /* Set width for smaller images */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid pink; /* Add pink border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+    width: 100px; 
+    height: auto; 
+    border: 3px solid pink; 
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 #robux-items ul {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     padding: 0;
-    display: flex; /* Align items horizontally */
-    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
-    gap: 10px; /* Add space between images */
-    justify-content: center; /* Center-align images in the container */
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
 }
 
 #robux-items li {
@@ -274,20 +265,20 @@ img {
 }
 
 #robux-items img {
-    width: 100px; /* Set width for smaller images */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid pink; /* Add pink border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+    width: 100px; 
+    height: auto; 
+    border: 3px solid pink;
+    border-radius: 5px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #vip-items ul {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     padding: 0;
-    display: flex; /* Align items horizontally */
-    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
-    gap: 10px; /* Add space between images */
-    justify-content: center; /* Center-align images in the container */
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
 }
 
 #vip-items li {
@@ -295,20 +286,20 @@ img {
 }
 
 #vip-items img {
-    width: 100px; /* Set width for smaller images */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid pink; /* Add pink border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+    width: 100px; 
+    height: auto; 
+    border: 3px solid pink;
+    border-radius: 5px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #makeup ul {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     padding: 0;
-    display: flex; /* Align items horizontally */
-    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
-    gap: 10px; /* Add space between images */
-    justify-content: center; /* Center-align images in the container */
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
 }
 
 #makeup li {
@@ -316,20 +307,20 @@ img {
 }
 
 #makeup img {
-    width: 100px; /* Set width for smaller images */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid pink; /* Add pink border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+    width: 100px; 
+    height: auto; 
+    border: 3px solid pink; 
+    border-radius: 5px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 #hair ul {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     padding: 0;
-    display: flex; /* Align items horizontally */
-    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
-    gap: 10px; /* Add space between images */
-    justify-content: center; /* Center-align images in the container */
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
 }
 
 #hair li {
@@ -337,20 +328,20 @@ img {
 }
 
 #hair img {
-    width: 100px; /* Set width for smaller images */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid pink; /* Add pink border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+    width: 100px; 
+    height: auto; 
+    border: 3px solid pink; 
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 #patterns ul {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     padding: 0;
-    display: flex; /* Align items horizontally */
-    flex-wrap: wrap; /* Allow wrapping if too many images for one row */
-    gap: 10px; /* Add space between images */
-    justify-content: center; /* Center-align images in the container */
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
 }
 
 #patterns li {
@@ -358,15 +349,14 @@ img {
 }
 
 #patterns img {
-    width: 100px; /* Set width for smaller images */
-    height: auto; /* Maintain aspect ratio */
-    border: 3px solid pink; /* Add pink border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for effect */
+    width: 100px; 
+    height: auto; 
+    border: 3px solid pink; 
+    border-radius: 5px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 
-/* Responsive Design */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -399,7 +389,7 @@ img {
     }
 
     #free-items img {
-        width: 80px; /* Smaller images on mobile for better fit */
+        width: 80px; 
     }
 }
 }
