@@ -11,7 +11,6 @@
     }, 1000);
 });
 
-// Funcțiile pentru salvarea și încărcarea datelor din LocalStorage
 const saveToLocalStorage = (category, imageUrl) => {
     const storedData = JSON.parse(localStorage.getItem("categories")) || {};
     if (!storedData[category]) storedData[category] = [];
@@ -90,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Solicită URL-ul imaginii și validează-l
+        
         const photoUrl = prompt("Enter the photo URL for the new item:");
 
         let itemList = categorySection.querySelector("ul");
@@ -107,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         newItem.appendChild(newImage);
         itemList.appendChild(newItem);
 
-        // Salvează în LocalStorage
+    
         saveToLocalStorage(selectedCategory, photoUrl);
 
         alert("Item added successfully!");
