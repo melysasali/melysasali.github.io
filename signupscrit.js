@@ -38,7 +38,7 @@
 
         if (user) {
             sessionStorage.setItem("loggedInUser", email);
-            window.location.href = "https://github.com/melysasali/melysasali.github.io/blob/main/main.html";
+            window.location.href = "main.html";
         } else {
             loginStatus.textContent = "Invalid email or password.";
             loginStatus.style.color = "red";
@@ -73,7 +73,7 @@
             signupForm.reset();
 
             setTimeout(() => {
-                window.location.href = "https://github.com/melysasali/melysasali.github.io/blob/main/main.html";
+                window.location.href = "main.html";
             }, 1000);
         }
     });
